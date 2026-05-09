@@ -1,6 +1,7 @@
 
 import express, { type Application, type Request, type Response } from "express";
 import { globalErrorHandler } from "./app/middleware/globalErrorHandler.js";
+import { notFound } from "./app/middleware/notFound.js";
 const app : Application = express();
 
 
@@ -10,4 +11,5 @@ app.get('/', (req: Request, res: Response) => {
 
 
 app.use(globalErrorHandler)
+app.use(notFound)
 export default app;
