@@ -3,10 +3,20 @@ import httpStatus from "http-status";
 
 export const globalErrorHandler =(err:any,req:Request,res:Response,next:NextFunction) =>{
 
+
+    let errorMessage;
+
+    if(err?.message){
+        if(err.code === "P2002")
+        {
+            errorMessage = "Already Exist";
+        }
+    }
+
     res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
         success: false,
         stack: err.stack,
-        message: err.message || "Internal Server Error",
+        message: errorMessage,
         error: err,
     });
 };
