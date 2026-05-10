@@ -30,7 +30,7 @@ A robust, scalable, and type-safe backend for a Library Management System. Built
 # Prisma Database Setup
 Since this project uses Prisma, follow these steps to sync your database:
 
-- 1. Configure Environment
+1. Configure Environment
 Create a .env file in the root directory and add your PostgreSQL connection string:
 
   ```bash
@@ -38,24 +38,24 @@ Create a .env file in the root directory and add your PostgreSQL connection stri
   PORT=3003
   ```
 
-- 2. Install Dependencies
+2. Install Dependencies
  
  ```bash
  npm install
  ```
-- 3. Sync Database (Migrations)
+3. Sync Database (Migrations)
 
 ```bash
  npx prisma migrate dev --name init
  ```
 
-- 4. Generate Client
+4. Generate Client
 
 ```bash
  npx prisma generate
  ```
 
-- 5. Explore via Prisma Studio
+5. Explore via Prisma Studio
 
 ```bash
  npx prisma studio
